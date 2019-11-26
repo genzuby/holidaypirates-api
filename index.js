@@ -4,7 +4,7 @@ const cors = require("cors");
 const dbconfig = require("./dbconfig");
 
 const app = express();
-const surveyRoute = require("./routes/hotels");
+const hotelsRoute = require("./routes/hotels");
 
 // allow cross-origin requests
 app.use(cors());
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
-app.use("/hotels", surveyRoute);
+app.use("/hotels", hotelsRoute);
 
 const MONGO_URI = dbconfig.MONGODB;
 
@@ -22,7 +22,7 @@ if (!MONGO_URI) {
   throw new Error("You must provide a MongoLab URI");
 }
 
-// connect mongoose with survey db
+// connect mongoose with holidaypirates db
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true

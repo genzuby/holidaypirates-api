@@ -1,30 +1,19 @@
 const mongoose = require("mongoose");
 
+const PriceSchema = mongoose.Schema({
+  season: String,
+  month: [Number],
+  seasonPirce: Number
+});
+
 const HotelsSchema = mongoose.Schema({
-  hotelId: {
-    type: String,
-    required: true
-  },
-  hotelName: {
-    type: String,
-    required: true
-  },
-  rate: {
-    type: Number
-  },
-  location: {
-    type: String
-  },
-  hotelDesc: {
-    type: String
-  },
-  price: [
-    {
-      season: {},
-      month: {},
-      seasonPirce:{}
-    }
-  ]
+  hotelId: String,
+  hotelName: String,
+  rate: Number,
+  location: String,
+  hotelDesc: String,
+  mainimg: String,
+  price: [PriceSchema]
 });
 
 // collection name : surveyitems

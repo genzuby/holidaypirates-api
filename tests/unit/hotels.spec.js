@@ -23,16 +23,10 @@ describe("Hotels mongoose test", () => {
   });
 
   describe("Get Hotels data", () => {
-    it("Should have a item", async () => {
+    it("Should have 11 items", async () => {
       expect.assertions(1);
       const hotels = await Hotels.find();
-      expect(hotels.length).toBe(1);
-    });
-
-    it("Should have a hotelId", async () => {
-      expect.assertions(1);
-      const hotels = await Hotels.find();
-      expect(hotels[0].hotelId).toBeTruthy();
+      expect(hotels.length).toBe(11);
     });
   });
 });
