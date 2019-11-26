@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+// const serverless = require("serverless-http");
 const dbconfig = require("./dbconfig");
 
 const app = express();
@@ -36,3 +37,5 @@ mongoose.connection.once("open", () => {
 app.listen(4000, () => {
   console.log("now listening fro requests on port 4000");
 });
+
+// module.exports.handler = serverless(app);
